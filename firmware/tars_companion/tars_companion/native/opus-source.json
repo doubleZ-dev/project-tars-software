@@ -1,0 +1,6 @@
+{
+  "source": "https://raw.githubusercontent.com/Rapptz/discord.py/65232c38702be5844cf2ce865a4777eb1928b5d0/discord/bin/libopus-0.x64.dll",
+  "sha256": "c84da836e8d92421ac305842cfe5a724898ed09d340d46b129e210bdc9448131",
+  "bytes": 441856,
+  "upstream": "libopus (Xiph), Windows build distributed by discord.py"
+}

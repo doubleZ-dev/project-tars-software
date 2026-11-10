@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TARS · 机械零点校准</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main><header><p class="eyebrow">PROJECT TARS / 本机工具</p><h1>舵机机械零点校准</h1><p>逐只居中、手动微调，由你判断机构机械零点。</p></header>
+<aside>MG90S 没有位置反馈：<strong>实际角度未知</strong>。参考 0° ≈ 1500μs，不保证机构对齐。校准不叠加历史步态偏移，也不覆盖正式步态零点。</aside>
+<section aria-label="连接与安全"><div class="toolbar"><button id="claim">获取网页控制权</button><label>原生 USB 设备 <select id="devices" aria-label="USB 设备"></select></label><button id="refresh">刷新设备</button><button id="connect">连接</button><button id="disconnect">断开</button></div>
+<p id="mode"></p><p id="connection" role="status">未连接</p><p id="state" role="status">未使能</p>
+<div class="toolbar"><button id="off" class="danger">关闭全部舵机输出 / 取消校准</button><button id="estop" class="danger">软件急停</button><button id="clear">清除急停（不使能）</button></div>
+<p class="hint">停止 PWM 不等于断开舵机电源。页面隐藏、失去焦点或心跳丢失会关闭校准输出；恢复后需重新获取控制权与确认使能。</p></section>
+<div id="cards" class="cards"></div>
+<section><div class="toolbar"><h2>用户确认记录</h2><button id="export">导出 JSON</button></div><p>仅记录设备返回完成响应的目标值；不代表测得实际角度。导出后供人工确认，不自动写入固件。</p><pre id="records">暂无记录</pre></section>
+<p id="error" role="alert"></p><footer>参考范围 −20°～+20° · 1°微调 · 滑块和输入框只编辑草稿，点击发送才驱动</footer></main></body></html>

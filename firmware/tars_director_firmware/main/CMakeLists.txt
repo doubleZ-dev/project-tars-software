@@ -1,0 +1,6 @@
+if(TARS_BOOT_DIAGNOSTIC)
+    set(tars_main "boot_diagnostic.c")
+else()
+    set(tars_main "app_main.c")
+endif()
+idf_component_register(SRCS "${tars_main}" INCLUDE_DIRS "." REQUIRES tars_usb tars_audio tars_core tars_motion tars_display tars_protocol tars_wifi_audio tars_xiaozhi_audio)

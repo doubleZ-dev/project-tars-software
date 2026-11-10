@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "mock": true,
+  "mapping": "500 + (angle_deg + 90) * 2000 // 180",
+  "reference_midpoint_deg": 0,
+  "reference_midpoint_us": 1500,
+  "actual_angle_deg": null,
+  "records": [
+    {
+      "servo": 1,
+      "gpio": 38,
+      "reference_angle_deg": 0,
+      "reference_pulse_us": 1500,
+      "calibration_angle_deg": 7,
+      "pulse_us": 1577,
+      "sent_at": "2026-11-07T02:42:34.767278+00:00",
+      "boot_id": "1c88f9d72156495f",
+      "command_id": "pc-a04f41bf3a2d",
+      "evidence": "mock",
+      "user_confirmed_mechanical_zero_deg": 7,
+      "confirmed_at": "2026-11-07T02:42:34.767381+00:00",
+      "actual_angle_deg": null
+    }
+  ],
+  "example_only": true
+}

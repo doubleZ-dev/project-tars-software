@@ -1,0 +1,3 @@
+config TARS_REFERENCE_PIXEL
+    bool "Pixel expressions"
+    default y

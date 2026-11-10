@@ -1,0 +1,35 @@
+# Local runtime state and credentials
+**/data/
+**/evidence/
+**/models/
+*.local.*
+*.credential.*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite3*
+*.db
+tars-seeduplex.json
+*user-confirmed*.json
+# Dependencies and generated files
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+managed_components/
+sdkconfig
+sdkconfig.old
+dependencies.lock
+*.log
+*.bin
+*.elf
+*.map
+releases/
+.playwright-cli/
+.DS_Store
+Thumbs.db

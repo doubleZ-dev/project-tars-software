@@ -1,0 +1,9 @@
+T AA1 R Z @TARS
+T AA1 R S @TARS
+T AA1 Z @TARS
+T AA1 S @TARS
+HH AH0 L OW1 T AA1 R Z @HELLO_TARS
+HH EY1 T AA1 R Z @HEY_TARS
+t ǎ s ī @塔斯
+t ā s ī @塔斯
+t ǎ ér s ī @塔尔斯

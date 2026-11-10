@@ -1,0 +1,7 @@
+{
+  "ssid": "YOUR_2_4_GHZ_WIFI",
+  "password": "REPLACE_WITH_WIFI_PASSWORD",
+  "host": "192.168.1.100",
+  "port": 8765,
+  "token": "REPLACE_WITH_GENERATED_32_TO_64_HEX_PAIRING_TOKEN"
+}

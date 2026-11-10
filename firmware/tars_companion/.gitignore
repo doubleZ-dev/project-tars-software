@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+evidence/
+wifi-audio.local.json
+*.credential.local.xml
+data/
+models/
+tars-service.local.json
+director-tts.local.json

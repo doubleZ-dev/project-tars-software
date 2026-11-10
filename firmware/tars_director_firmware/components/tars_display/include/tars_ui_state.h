@@ -1,0 +1,27 @@
+/*
+ * TARS UI State Machine
+ */
+
+#pragma once
+
+typedef enum {
+    TARS_LEFT_IDLE,
+    TARS_LEFT_LISTENING,
+    TARS_LEFT_ANALYZING,
+    TARS_LEFT_WALKING,
+    TARS_LEFT_ERROR,
+} tars_left_state_t;
+
+typedef enum {
+    TARS_STATE_BOOT,
+    TARS_STATE_IDLE,
+    TARS_STATE_LISTENING,
+    TARS_STATE_ANALYZING,
+    TARS_STATE_SPEAKING,
+    TARS_STATE_EXECUTING,
+    TARS_STATE_WALKING,
+    TARS_STATE_CHARGING,
+    TARS_STATE_LOW_BATTERY,
+    TARS_STATE_ERROR,
+    TARS_STATE_SLEEP
+} tars_robot_state_t;

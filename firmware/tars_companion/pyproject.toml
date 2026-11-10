@@ -1,0 +1,29 @@
+[project]
+name = "tars-companion"
+version = "0.17.0"
+requires-python = ">=3.11"
+dependencies = ["pyserial>=3.5,<4"]
+
+[project.optional-dependencies]
+gpt = ["openai>=2.43.0,<3"]
+voice = ["dashscope>=1.25.23,<2", "sounddevice>=0.5.1,<1"]
+doubao = ["websockets>=14,<16", "sounddevice>=0.5.1,<1"]
+daily = ["websockets>=14,<16", "numpy>=2,<3", "sherpa-onnx==1.13.8", "cryptography>=46,<51"]
+
+[project.scripts]
+tars-companion = "tars_companion.cli:main"
+tars-hil = "tars_companion.hil:main"
+tars-brain = "tars_companion.chat:main"
+tars-voice = "tars_companion.voice_cli:main"
+tars-robot = "tars_companion.robot_runtime:main"
+tars-voice-doctor = "tars_companion.voice_doctor:main"
+tars-servo-calibrate = "tars_companion.servo_calibration:main"
+tars-gait-debug = "tars_companion.gait_debug:main"
+tars-deploy = "tars_companion.deployment:main"
+
+[tool.setuptools.package-data]
+tars_companion = ["servo_web/*", "gait_web/*", "director_web/*", "expression_catalog.json", "motionpack_catalog.json", "tars_keywords.txt", "native/*"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

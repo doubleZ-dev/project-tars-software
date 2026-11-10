@@ -1,0 +1,206 @@
+[
+  {
+    "name": "boot",
+    "label": "开机苏醒",
+    "duration_ms": 4000,
+    "kind": "state"
+  },
+  {
+    "name": "idle",
+    "label": "待机",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "listening",
+    "label": "聆听",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "analyzing",
+    "label": "分析中",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "speaking",
+    "label": "说话",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "executing",
+    "label": "执行任务",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "walking",
+    "label": "行走",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "charging",
+    "label": "充电",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "low_battery",
+    "label": "低电量",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "error",
+    "label": "故障",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "sleep",
+    "label": "睡眠",
+    "duration_ms": 0,
+    "kind": "state"
+  },
+  {
+    "name": "support_probe",
+    "label": "H支撑检查（托住机身）",
+    "duration_ms": 2500,
+    "kind": "action"
+  },
+  {
+    "name": "hello_small",
+    "label": "打招呼·试挥一次",
+    "duration_ms": 3700,
+    "kind": "action"
+  },
+  {
+    "name": "hello",
+    "label": "打招呼",
+    "duration_ms": 5700,
+    "kind": "action"
+  },
+  {
+    "name": "bye",
+    "label": "再见",
+    "duration_ms": 10000,
+    "kind": "action"
+  },
+  {
+    "name": "respond",
+    "label": "我在！",
+    "duration_ms": 3360,
+    "kind": "action"
+  },
+  {
+    "name": "affection",
+    "label": "撒娇·求关注",
+    "duration_ms": 6550,
+    "kind": "action"
+  },
+  {
+    "name": "thanks",
+    "label": "感谢",
+    "duration_ms": 2250,
+    "kind": "action"
+  },
+  {
+    "name": "happy",
+    "label": "高兴",
+    "duration_ms": 7400,
+    "kind": "action"
+  },
+  {
+    "name": "excited",
+    "label": "特别开心",
+    "duration_ms": 9100,
+    "kind": "action"
+  },
+  {
+    "name": "angry",
+    "label": "生气",
+    "duration_ms": 10200,
+    "kind": "action"
+  },
+  {
+    "name": "sulky",
+    "label": "闹别扭",
+    "duration_ms": 5550,
+    "kind": "action"
+  },
+  {
+    "name": "sad",
+    "label": "伤心",
+    "duration_ms": 6900,
+    "kind": "action"
+  },
+  {
+    "name": "disappointed",
+    "label": "失落",
+    "duration_ms": 8400,
+    "kind": "action"
+  },
+  {
+    "name": "shy",
+    "label": "害羞",
+    "duration_ms": 6300,
+    "kind": "action"
+  },
+  {
+    "name": "surprised",
+    "label": "惊讶",
+    "duration_ms": 2300,
+    "kind": "action"
+  },
+  {
+    "name": "nervous",
+    "label": "害怕·紧张",
+    "duration_ms": 7900,
+    "kind": "action"
+  },
+  {
+    "name": "sleepy",
+    "label": "困了",
+    "duration_ms": 7200,
+    "kind": "action"
+  },
+  {
+    "name": "curious",
+    "label": "好奇",
+    "duration_ms": 6050,
+    "kind": "action"
+  },
+  {
+    "name": "confused",
+    "label": "疑惑",
+    "duration_ms": 8900,
+    "kind": "action"
+  },
+  {
+    "name": "thinking",
+    "label": "思考",
+    "duration_ms": 7550,
+    "kind": "action"
+  },
+  {
+    "name": "proud",
+    "label": "得意",
+    "duration_ms": 3800,
+    "kind": "action"
+  },
+  {
+    "name": "playful",
+    "label": "淘气·逗你玩",
+    "duration_ms": 4050,
+    "kind": "action"
+  },
+  {
+    "name": "reluctant",
+    "label": "不情愿但答应了",
+    "duration_ms": 6700,
+    "kind": "action"
+  }
+]

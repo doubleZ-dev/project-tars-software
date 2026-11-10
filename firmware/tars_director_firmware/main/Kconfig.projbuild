@@ -1,0 +1,9 @@
+menu "TARS PCB V1.0"
+    config TARS_LCD_BACKLIGHT_DRIVE
+        bool "Drive shared LCD BLK after verifying module electrical input"
+        default n
+        help
+            Enable only after confirming that both LCD modules provide a
+            low-current logic BLK input with appropriate current limiting.
+            Default: GPIO8 is high impedance; UI still renders to both panels.
+endmenu
