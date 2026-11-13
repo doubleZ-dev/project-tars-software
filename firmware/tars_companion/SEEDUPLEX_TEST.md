@@ -5,7 +5,7 @@ Uses the current web experience's protocol: model `1.2.6.1`, JSON events at
 authentication. This is separate from the older `doubao_runtime` SC2.0 binary
 protocol. Existing launchers and firmware are unchanged.
 
-Speaker is explicitly `S_vXjewQyk2`; no preset fallback. Persona is in
+Speaker is explicitly `YOUR_SPEAKER_ID`; no preset fallback. Persona is in
 `tars-seeduplex.json`. Input 16kHz mono PCM16, cloud output 24kHz PCM16,
 resampled to the robot's 16kHz PCM16. Current user-accepted playback path buffers
 and converts the complete reply before playing, with no extra gain, cloud

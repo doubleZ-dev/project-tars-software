@@ -1,0 +1,14 @@
+TARS 项目原创资料许可
+
+Copyright (c) 项目作者 wenzeng1 / doubleZ-dev
+作者发布的原创硬件资料、机械模型、固件源码、电脑端程序及文档采用
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享）。
+
+未经作者另行授权，不得用于商业用途。商业使用请联系作者取得授权。
+保留作者署名；改编和再分发原创资料时遵守同一许可。
+完整许可条款：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans
+联系作者：https://oshwhub.com/wenzeng1/project_hgrrprlm
+
+第三方软件、字体和其他资源不因收录于本项目而改变原权利或许可证。
+第三方许可证及来源说明保留于相应目录；本声明不对第三方资源授予额外权利。

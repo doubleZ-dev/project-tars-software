@@ -19,7 +19,7 @@
 
 ## 官方接口核实与兼容性边界
 
-选用 SC2.0，`dialog.extra.model=2.2.0.0`，`tts.speaker=S_vXjewQyk2`，人设用 `dialog.character_manifest`。`seed-icl-2.0` 是声音复刻资源标识，不是本端到端模型名。请求明确使用 `pcm_s16le`，避免把默认 Opus 或 32 位 PCM 当成 PCM16。
+选用 SC2.0，`dialog.extra.model=2.2.0.0`，`tts.speaker=YOUR_SPEAKER_ID`，人设用 `dialog.character_manifest`。`seed-icl-2.0` 是声音复刻资源标识，不是本端到端模型名。请求明确使用 `pcm_s16le`，避免把默认 Opus 或 32 位 PCM 当成 PCM16。
 
 SC2.0 接入文档说明复刻 2.0 音色可用于 TTS 与实时语音；其旧注册流程要求 `model_type=4`。较新的音色注册页面给出的复刻 2.0 状态示例为 `model_type=5`。不能跨接口把这两个值等同，也不能由 `S_` 前缀或 TTS 试听成功认定端到端兼容。
 

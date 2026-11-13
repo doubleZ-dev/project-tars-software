@@ -18,7 +18,7 @@ from .wifi_audio import (LanAudioServer, NetworkJsonTransport, load_profile,
                          PLAY_START, PLAY_PCM, PLAY_END)
 
 URL = "wss://openspeech.bytedance.com/api/v3/duplex/realtime/dialogue"
-SPEAKER = "S_vXjewQyk2"
+SPEAKER = os.environ.get("TARS_TTS_SPEAKER", "YOUR_SPEAKER_ID")
 
 
 def end_conversation(text):
