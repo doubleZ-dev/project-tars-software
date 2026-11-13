@@ -1,0 +1,37 @@
+豆包配置与声音复刻
+
+本程序由电脑连接豆包语音服务，机器人通过局域网与电脑通信。
+前进、转向和数量使用离线 SenseVoice 识别；其他语音走豆包端到端实时对话。
+
+一、开通服务
+在自己的火山引擎豆包语音控制台创建 API Key，并开通端到端实时语音服务。
+本程序采用 Realtime JSON 事件协议：
+wss://openspeech.bytedance.com/api/v3/duplex/realtime/dialogue
+请求头 X-Api-Key，会话 model 为 1.2.6.1。
+参考：https://docs.volcengine.com/docs/doubao-voice/end-to-end-real-time-voice-full-duplex-version?lang=zh
+
+二、音色
+可使用账号有权限、同时适配实时对话和合成接口的音色。包内没有作者的音色或授权。
+若使用自己的克隆声音：
+1. 在控制台开通豆包声音复刻模型 2.0，获得自己的音色 ID/槽位。
+2. 按控制台提示上传或录制本人/有授权的声音，训练并试听。
+3. 保存该 Speaker ID，确认语音合成和实时对话均有权限。
+4. 运行 Configure-Voice.cmd，填此 Speaker ID；克隆 2.0 的 TTS resource 使用 seed-icl-2.0。
+5. 运行 Start-Voice.cmd --prepare 生成两句提示语验证合成权限，之后实际聊天验证实时接口。
+   合成成功并不自动代表实时对话权限也已开通。
+若使用预设音色，应按其官方文档填写匹配的 resource，而不是沿用克隆音色资源。
+参考：
+https://docs.volcengine.com/docs/doubao-voice/console-guidance?lang=zh
+https://docs.volcengine.com/docs/doubao-voice/quick-start-new-console?lang=zh
+https://docs.volcengine.com/docs/doubao-voice/sound-replica-api-v3?lang=zh
+
+三、保存与使用
+API Key 只在本机输入，Windows 加密保存；启动器临时传入语音进程，不写入固件。
+Speaker ID、resource、TTS model 存在 voice.local.json；它们不是作者预设的私有值。
+“让我想想”“完成”通过文本合成接口生成后缓存，后续启动重用。
+聊天返回的音频使用同一 Speaker ID，程序不偷偷切换到其他音色。
+本地对话记忆存于 data/voice-memory.sqlite3；用户可停止服务后自行备份或删除。
+如提示权限、额度或音色错误，按控制台检查对应服务，不要把 API Key 发到公开问题区。
+云端开通、计费、音色可用性和授权以用户自己的控制台为准。
+
+本说明核对日期：2026-11-13。

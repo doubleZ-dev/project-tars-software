@@ -1,0 +1,84 @@
+TARS 0.18.3-public — 给安装助手 AI 的执行说明
+
+目标：为新用户安装机器人固件、电脑日常语音服务和舵机调试工具。
+本包无拍视频用的 AI 导演台。不要安装旧导演台包，也不要索要作者的账号或配对文件。
+适用：Windows 10/11 x64、Python 3.13 x64、TARS PCB V1、ESP32-S3-WROOM-1-N16R8。
+硬件引脚见 firmware-source/components/tars_board/include/tars_board.h。不同接线须自行改源码编译。
+
+0. 确认用户硬件型号和连接。烧录与配网期间断开舵机供电，ESP32 通过 USB 供电。
+   不要猜 COM 口或设备身份；列出设备并请用户确认。不要执行运动来辨认设备。
+   Wi-Fi 需要 2.4 GHz WPA2；电脑和机器人在同一可信局域网。
+   电脑固定局域网 IPv4，建议在路由器做 DHCP 地址保留。
+
+1. 依赖安装
+   安装官方 Python 3.13 x64：https://www.python.org/downloads/
+   解压到用户可写目录，运行根目录 Install.cmd。
+   它创建 companion/.venv，安装 requirements.lock.txt 的固定版本，下载官方本地 ASR 模型并核验 SHA256。
+   模型下载约 155 MB，解压约 239 MB；Python 依赖另占空间。压缩包小不代表安装后只有几 MB。
+   下载失败可重跑，不要跳过哈希校验或用未知模型替换。
+
+2. 查设备、验证并烧录（下面命令从包根目录执行，COMx 和 MAC 必须替换）
+   companion\.venv\Scripts\python.exe -m serial.tools.list_ports -v
+   companion\.venv\Scripts\python.exe -m esptool --chip esp32s3 --port COMx read_mac
+   companion\.venv\Scripts\python.exe tools\flash.py --port COMx --device-mac aa:bb:cc:dd:ee:ff
+   上一步只显示烧录计划。用户已确认该板及烧录后再执行：
+   companion\.venv\Scripts\python.exe tools\flash.py --port COMx --device-mac aa:bb:cc:dd:ee:ff --apply
+   脚本检查固件 SHA256、ESP32-S3、目标 MAC 和 16MB Flash，然后写入并读回验证。
+   bootloader.bin -> 0x0；partition-table.bin -> 0x8000；tars_firmware.bin -> 0x10000。
+   DIO / 80MHz / 16MB。不整片擦除，不发布 NVS 备份。其他布局的已有设备应先由用户备份。
+
+3. 首次配网和证书（先停止所有占用机器人连接的程序）
+   cd companion
+   .venv\Scripts\python.exe -X utf8 -m tars_companion.setup_public --port COMx
+   用户在本机终端输入 Wi-Fi SSID、密码、电脑 IPv4；密码不会显示。
+   程序读取所选板 MAC，生成随机配对 token 和该电脑独有的 TLS 证书/私钥。
+   仅将公开证书和配网信息经 USB 写入机器人；私钥只留在电脑 data/tls。
+   烧录后 COM 口可能变化；再次列出端口再执行配网。程序按 USB 序列号跟随配网期间的重新枚举。
+   成功后手动重启机器人。无须用户编译，也无须作者的证书、电脑或账号。
+   Windows 防火墙仅允许 companion/.venv/Scripts/python.exe 在专用局域网接收 TCP 8765、8766。
+   不需要公网端口映射。
+
+4. 豆包与声音
+   先读 DOUBAO_VOICE.txt。用户使用自己的火山引擎账号、API Key 和 Speaker ID。
+   运行 companion/Configure-Voice.cmd，在本机安全输入框中输入 API Key。
+   API Key 以当前 Windows 用户的 DPAPI 加密文件保存，不让用户把密钥贴到聊天或源码。
+   填写能用于实时对话和语音合成的 Speaker ID，以及对应的 TTS resource。
+   token_budget 是本程序本地的对话额度上限，并非云端免费额度；至少 100000。
+   云端实际计费由用户账号决定。固定提示语合成不计入此对话额度，应另查看云端账单。
+   是否启用语音动作由用户在确认标定与运动空间后输入 YES 决定；否则仍可聊天。
+   人格可改 tars-seeduplex.local.json 的 instructions；不要把密钥放入人格。
+
+5. 检查与启动
+   companion/Start-Voice.cmd --check：本地配置、证书、模型存在性与 Opus 检查，不访问云端或驱动机器人。
+   companion/Start-Voice.cmd --prepare：调用用户云账号生成“让我想想”“完成”两句并缓存，不驱动机器人。
+   companion/Start-Voice.cmd：开启语音服务；等出现“本地监听中”后开始说话。
+   若 Windows 弹出防火墙提示，选择专用网络；不要开放公网访问。
+   前进、左转、右转和数量在电脑本地识别，例如“向前走五步”“向右转三次”。
+   较大数量按固件单段上限分段执行；断线或失败不重放未确认的动作。
+   其他对话把该轮原始语音发给豆包，回复送回机器人播放。
+   动作执行完才播放完成提示；运动和播放期间不收音，不支持边动边说或语音喊停。
+   用 Stop-Voice.cmd 或语音窗口 Ctrl+C 停止服务；异常断线由设备租约停止输出。
+   电脑必须保持运行且不休眠，机器人可拔 USB 改为自身供电。
+
+6. 舵机页面
+   先停止语音服务，再用 USB 连接。
+   Start-Gait-Debug.cmd：动作/步态编辑与调试。
+   Start-Servo-Debug.cmd：单舵机校准。一次只开一个工具。
+   --mock 可查看模拟页面，不连接硬件。页面只在电脑本机监听。
+   机械参数必须按实际装配校准，不能把作者的效果保证当作不同机械结构的验证。
+
+7. 验收与错误处理
+   先确认控制与音频连接，再由用户在旁试一条短指令和一句普通聊天。
+   没有看到真实成功结果，不得向用户报告“已经实机通过”。
+   日常状态在 companion/data/status.local.json，识别与错误也显示在语音窗口。
+   不能通过关闭 TLS 校验、跳过 MAC 校验、禁用动作租约来修复连接问题。
+   电脑 IP 改变需重新生成对应证书并 USB 配网；更换电脑不能直接沿用 DPAPI 凭据。
+   已有配对文件会被保留。重新配对前停止服务，将旧 wifi-audio.local.json 和 data/tls
+   移到自己的私有备份目录，再重跑第 3 步；重新输入 API Key 可私下备份并移走旧 credential 文件。
+
+8. 发布边界
+   仅发布原始交付 ZIP。安装后产生的 *.local.*、data/、models/、.venv/ 不要重新打包上传。
+   其中包含用户密码、配对 token、私钥、语音缓存和本地对话记忆。
+   包内 firmware-source 和 companion 是本版本源码；GitHub 项目入口：
+   https://github.com/doubleZ-dev/project-tars-software
+   该仓库可能尚未同步本包的新版本；以本包版本和 SHA256.json 为准。

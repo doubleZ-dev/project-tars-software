@@ -21,17 +21,17 @@ The video is linked on Bilibili; no video file is uploaded to this repository.
 | PCB source | [TARS_PCB_2026-11-13.epro2](hardware/TARS_PCB_2026-11-13.epro2), EasyEDA Pro / LCEDA Pro |
 | Complete BOM and cost workbook | [Excel workbook](hardware/Project_TARS_V1_BOM_2026-11-13.xlsx), with board parts, purchased parts, fasteners and price evidence |
 | PC AI configuration | [Companion, API and Doubao voice cloning](docs/AI_SETUP.en.md) |
-| Firmware and USB debug packages | Use the final OSHWHub attachments. The author is preparing the final public delivery; historical source is not presented as the final firmware |
+| Complete software package | [TARS-0.18.3-public.zip](https://github.com/doubleZ-dev/project-tars-software/releases/download/v0.18.3-public/TARS-0.18.3-public.zip) · [Release notes](https://github.com/doubleZ-dev/project-tars-software/releases/tag/v0.18.3-public): firmware, matching source, daily voice Companion, USB debugging and setup instructions; replaces the two separate packages |
 | License | [CC BY-NC-SA 4.0](LICENSE.txt) for original materials; commercial use requires separate permission |
 
 ## Release status and version boundaries
 
-- Hardware is based on the author's November 13, 2026 project. The author has printed and successfully assembled the current three-plate mechanical project.
-- The author confirms that `0.18.2-final65` was flashed on the original robot and its debug page opened. The same firmware supports voice control, conversation and web debugging; voice still requires a running PC Companion.
-- Existing repository source includes the historical `0.18.0-director` project. It has not been verified as the exact source of the latest binary. Final standalone firmware and daily-voice delivery will be synchronized when supplied by the author.
-- The filming-oriented AI director is not part of the new installation packages. Existing historical code remains development reference, not the reproduction entry point.
-- The OSHWHub PCB preview may not yet be generated; the full `.epro2` file and BOM can be downloaded directly.
-- Successful operation on the original setup is not a clean-PC reproduction test or validation of arbitrary replacement hardware.
+- **0.18.3-public** is the current public software package. Download the original ZIP above and read `AI_INSTALL.txt`. Its `firmware-source/` and `companion/` contain the matching source. Historical `0.18.0-director` repository code is not this release's installation entry point.
+- Includes ESP32-S3 binaries, ESP-IDF source, daily voice service, servo web tools, configuration templates and installers/flashing tools. **The filming AI director is excluded.**
+- Targets Windows 10/11 x64, Python 3.13 x64 and TARS PCB V1 / ESP32-S3 N16R8. First installation downloads dependencies and an approximately 155 MB recognition model.
+- Each user generates their own TLS certificate and random pairing credentials locally and provisions the device over USB. Initial pairing requires neither the author's PC certificate nor a custom firmware build.
+- **The provider reports** successful ESP-IDF 5.5.3 builds, an independent reduced-source rebuild, clean Python dependency installation and local/simulated checks; see `VALIDATION.txt`. **Full 0.18.3 hardware and user-account cloud conversation acceptance are still pending.** Publication-time file/hash checks are not hardware validation.
+- Earlier original-robot firmware feedback and successful assembly of the current three-plate print project do not establish 0.18.3 hardware acceptance. Hardware files use the author's November 13, 2026 revision.
 
 ## Capabilities and architecture
 
@@ -205,19 +205,18 @@ Use the final author-confirmed package and instructions. For ESP32-S3 / 16 MB Fl
 
 Disconnect power before wiring or soldering. Use the hardware project for detailed nets and pads, with the C7 purchasing correction above.
 
-## USB debugging
+## USB debugging tools
 
-1. Extract the standalone servo debug package and install Python 3.11 or later.
-2. Run `安装依赖.cmd` to install dependencies.
-3. Connect the robot over USB and stop other debug/voice processes using the device.
-4. Run `Start-Gait-Debug.cmd` for gait/action debugging; connect, confirm and enable in the page.
-5. Use `Start-Servo-Debug.cmd` for single-servo calibration. Run one tool at a time. If the browser does not open automatically, copy the complete local URL printed in the terminal.
+1. Extract the **0.18.3-public complete package**, install Python 3.13 x64 and run root `Install.cmd`.
+2. Stop voice services, connect USB and run only one tool at a time.
+3. Run `companion/Start-Servo-Debug.cmd` for individual-servo calibration or `companion/Start-Gait-Debug.cmd` for gait/action tuning.
+4. Check mechanical zero, direction and clearance before enabling motion through the page.
 
-`--mock` displays a simulated device without hardware; it is not a hardware validation result. Stop and inspect calibration/assembly if the mechanism jams instead of repeatedly forcing motion.
+`--mock` checks a simulated page; it is not hardware acceptance. Stop and inspect assembly if the mechanism binds.
 
 ## PC AI, API and Doubao voice cloning
 
-The [PC configuration guide](docs/AI_SETUP.en.md) covers dependencies, LAN pairing, TLS certificates, API keys, voice training, Speaker IDs and troubleshooting. Installing board firmware and the USB debug package does not install a PC AI Companion.
+The [PC configuration guide](docs/AI_SETUP.en.md) covers dependencies, LAN pairing, TLS certificates, API keys, voice training, Speaker IDs and troubleshooting. The complete 0.18.3 package includes the PC Companion; install its dependencies and configure your own cloud account before use.
 
 Keep API keys, Wi-Fi passwords, pairing tokens, TLS private keys, personal recordings, conversation databases and runtime logs on your own PC. Do not publish them. Use a voice you are authorized to use. The PC service must keep running; closing the web page does not remove that requirement.
 
