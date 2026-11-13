@@ -1,4 +1,4 @@
-# TARS — An Articulated, Voice-Interactive Interstellar Robot
+# TASK · TARS Embodied Robotics — Complete Project
 
 [中文](README.md) | **English**
 
@@ -21,7 +21,7 @@ The video is linked on Bilibili; no video file is uploaded to this repository.
 | PCB source | [TARS_PCB_2026-11-13.epro2](hardware/TARS_PCB_2026-11-13.epro2), EasyEDA Pro / LCEDA Pro |
 | Complete BOM and cost workbook | [Excel workbook](hardware/Project_TARS_V1_BOM_2026-11-13.xlsx), with board parts, purchased parts, fasteners and price evidence |
 | PC AI configuration | [Companion, API and Doubao voice cloning](docs/AI_SETUP.en.md) |
-| Complete software package | [TARS-0.18.3-public.zip](https://github.com/doubleZ-dev/project-tars-software/releases/download/v0.18.3-public/TARS-0.18.3-public.zip) · [Release notes](https://github.com/doubleZ-dev/project-tars-software/releases/tag/v0.18.3-public): firmware, matching source, daily voice Companion, USB debugging and setup instructions; replaces the two separate packages |
+| Complete software package | [TARS-0.18.3-public.zip](https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics/releases/download/v0.18.3-public/TARS-0.18.3-public.zip) · [Release notes](https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics/releases/tag/v0.18.3-public): firmware, matching source, daily voice Companion, USB debugging and setup instructions; replaces the two separate packages |
 | License | [CC BY-NC-SA 4.0](LICENSE.txt) for original materials; commercial use requires separate permission |
 
 ## Release status and version boundaries

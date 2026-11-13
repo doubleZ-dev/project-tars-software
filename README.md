@@ -1,4 +1,4 @@
-# 可动可语音交互的 TARS 星际穿越机器人
+# TASK · TARS 具身机器人完整工程
 
 **中文** | [English](README.en.md)
 
@@ -21,7 +21,7 @@
 | PCB 源工程 | [TARS_PCB_2026-11-13.epro2](hardware/TARS_PCB_2026-11-13.epro2)，嘉立创 EDA 专业版 |
 | 整机 BOM 与成本 | [Excel 工作簿](hardware/Project_TARS_V1_BOM_2026-11-13.xlsx)，含板载器件、外购件、螺钉和价格依据 |
 | 电脑端 AI 配置 | [Companion、API 与豆包音色克隆说明](docs/AI_SETUP.zh-CN.md) |
-| 完整软件安装包 | [TARS-0.18.3-public.zip](https://github.com/doubleZ-dev/project-tars-software/releases/download/v0.18.3-public/TARS-0.18.3-public.zip) · [发布记录](https://github.com/doubleZ-dev/project-tars-software/releases/tag/v0.18.3-public)：固件、对应源码、日常语音 Companion、USB 调试和安装说明；替代旧两个零散包 |
+| 完整软件安装包 | [TARS-0.18.3-public.zip](https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics/releases/download/v0.18.3-public/TARS-0.18.3-public.zip) · [发布记录](https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics/releases/tag/v0.18.3-public)：固件、对应源码、日常语音 Companion、USB 调试和安装说明；替代旧两个零散包 |
 | 许可 | [CC BY-NC-SA 4.0](LICENSE.txt)：原创资料禁止未经授权的商业使用，商用请联系作者 |
 
 ## 当前发布状态与版本边界

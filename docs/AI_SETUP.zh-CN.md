@@ -4,7 +4,7 @@
 
 ## 获取与版本
 
-下载 [完整软件包](https://github.com/doubleZ-dev/project-tars-software/releases/download/v0.18.3-public/TARS-0.18.3-public.zip)；它替代旧固件和舵机调试两个零散包，包含对应源码、日常语音 Companion 和调试工具，不含拍摄导演台。详细中文操作以包内 `AI_INSTALL.txt`、`DOUBAO_VOICE.txt` 为准。
+下载 [完整软件包](https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics/releases/download/v0.18.3-public/TARS-0.18.3-public.zip)；它替代旧固件和舵机调试两个零散包，包含对应源码、日常语音 Companion 和调试工具，不含拍摄导演台。详细中文操作以包内 `AI_INSTALL.txt`、`DOUBAO_VOICE.txt` 为准。
 
 提供者已报告编译及本地检查通过；0.18.3 完整实机和用户云端账号验收尚未完成。不要将 `--check` 或 `--mock` 的成功视为实机通过。
 

@@ -4,7 +4,7 @@
 
 ## Package and validation status
 
-Download the [complete software ZIP](https://github.com/doubleZ-dev/project-tars-software/releases/download/v0.18.3-public/TARS-0.18.3-public.zip). It replaces the separate firmware/debug archives and includes matching source, daily voice Companion and USB tools, without the filming director. The bundled `AI_INSTALL.txt` and `DOUBAO_VOICE.txt` provide detailed Chinese instructions.
+Download the [complete software ZIP](https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics/releases/download/v0.18.3-public/TARS-0.18.3-public.zip). It replaces the separate firmware/debug archives and includes matching source, daily voice Companion and USB tools, without the filming director. The bundled `AI_INSTALL.txt` and `DOUBAO_VOICE.txt` provide detailed Chinese instructions.
 
 The provider reports successful compilation and local checks. Full 0.18.3 hardware and user-account cloud acceptance remain pending. A successful `--check` or `--mock` run is not hardware validation.
 

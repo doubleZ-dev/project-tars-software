@@ -86,8 +86,8 @@ THIRD_PARTY_NOTICES.md       # 依赖与资源说明
 ### 1. 安装电脑端
 
 ```powershell
-git clone https://github.com/doubleZ-dev/project-tars-software.git
-cd project-tars-software/firmware/tars_companion
+git clone https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics.git
+cd TASK-TARS-Embodied-Robotics/firmware/tars_companion
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e ".[daily,doubao,voice,gpt]"
 ```

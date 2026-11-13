@@ -80,5 +80,5 @@ TARS 0.18.3-public — 给安装助手 AI 的执行说明
    仅发布原始交付 ZIP。安装后产生的 *.local.*、data/、models/、.venv/ 不要重新打包上传。
    其中包含用户密码、配对 token、私钥、语音缓存和本地对话记忆。
    包内 firmware-source 和 companion 是本版本源码；GitHub 项目入口：
-   https://github.com/doubleZ-dev/project-tars-software
+   https://github.com/doubleZ-dev/TASK-TARS-Embodied-Robotics
    该仓库可能尚未同步本包的新版本；以本包版本和 SHA256.json 为准。

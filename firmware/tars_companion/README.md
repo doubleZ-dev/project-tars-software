@@ -18,7 +18,7 @@ Native USB communication and Stage 3 text Brain are retained. Stage 4 adds
 vendor-neutral speech adapters, offline body-audio mocks and an independent
 same-LAN audio channel. No speech model or paid API is selected/called.
 Current ledger: [Stage 4 status](../tars_firmware/docs/STAGE4_STATUS.md).
-Historical GPT work: [STAGE3_STATUS.md](STAGE3_STATUS.md).
+Current installation: [0.18.3 public setup guide](../../docs/AI_SETUP.en.md).
 
 ## Stage 4: no cloud credentials required
 
